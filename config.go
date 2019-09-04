@@ -101,7 +101,7 @@ type LeaseInfo struct {
 // NewInstance 创建服务实例
 func NewInstance(ip string, config *Config) *Instance {
 	instance := &Instance{
-		InstanceID: fmt.Sprintf("%s:%s:%d", ip, config.App, config.Port),
+		InstanceID: fmt.Sprintf("%s:%s:%d", config.HostName, config.App, config.Port),
 		HostName:   config.HostName,
 		App:        config.App,
 		IPAddr:     ip,
