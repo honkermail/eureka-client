@@ -104,7 +104,7 @@ func NewInstance(ip string, config *Config) *Instance {
 		InstanceID: fmt.Sprintf("%s:%s:%d", config.HostName, config.App, config.Port),
 		HostName:   config.HostName,
 		App:        config.App,
-		IPAddr:     config.HostName,
+		IPAddr:     ip,
 		Port: &Port{
 			Port:    config.Port,
 			Enabled: "true",
@@ -116,7 +116,7 @@ func NewInstance(ip string, config *Config) *Instance {
 			RenewalIntervalInSecs: config.RenewalIntervalInSecs,
 			DurationInSecs:        config.DurationInSecs,
 		},
-		Status:           "UP",
+		Status:           "UP111",
 		OverriddenStatus: "UNKNOWN",
 		// 数据中心
 		DataCenterInfo: &DataCenterInfo{
