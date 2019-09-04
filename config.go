@@ -104,7 +104,7 @@ func NewInstance(ip string, config *Config) *Instance {
 		InstanceID: fmt.Sprintf("%s:%s:%d", config.HostName, config.App, config.Port),
 		HostName:   config.HostName,
 		App:        config.App,
-		IPAddr:     ip,
+		IPAddr:     config.HostName,
 		Port: &Port{
 			Port:    config.Port,
 			Enabled: "true",
@@ -126,7 +126,7 @@ func NewInstance(ip string, config *Config) *Instance {
 		// 元数据
 		Metadata: config.Metadata,
 	}
-	instance.HomePageURL = fmt.Sprintf("http://%s:%d", config.HostName, config.Port)
+	instance.HomePageURL = fmt.Sprintf("http://%s:%d", ip, config.Port)
 	instance.StatusPageURL = fmt.Sprintf("http://%s:%d/info", ip, config.Port)
 	return instance
 }
