@@ -133,7 +133,7 @@ func (c *Client) handleSignal() {
 // NewClient 创建客户端
 func NewClient(config *Config) *Client {
 	defaultConfig(config)
-	config.instance = NewInstance(getLocalIP(),config)
+	config.instance = NewInstance("localhost",config)
 	return &Client{Config: config}
 }
 
