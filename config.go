@@ -14,12 +14,14 @@ type Config struct {
 	RegistryFetchIntervalSeconds int
 	// 过期间隔，默认90s
 	DurationInSecs int
+	//主机名称
+	HostName string
 	// 应用名称
 	App string
 	// 端口
 	Port     int
 	Metadata map[string]interface{}
-
+	
 	// 服务实例信息
 	instance *Instance
 }
@@ -100,7 +102,7 @@ type LeaseInfo struct {
 func NewInstance(ip string, config *Config) *Instance {
 	instance := &Instance{
 		InstanceID: fmt.Sprintf("%s:%s:%d", ip, config.App, config.Port),
-		HostName:   ip,
+		HostName:   config.HostName,
 		App:        config.App,
 		IPAddr:     ip,
 		Port: &Port{
