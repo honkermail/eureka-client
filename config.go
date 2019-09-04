@@ -116,7 +116,7 @@ func NewInstance(ip string, config *Config) *Instance {
 			RenewalIntervalInSecs: config.RenewalIntervalInSecs,
 			DurationInSecs:        config.DurationInSecs,
 		},
-		Status:           "UP111",
+		Status:           "UP",
 		OverriddenStatus: "UNKNOWN",
 		// 数据中心
 		DataCenterInfo: &DataCenterInfo{
